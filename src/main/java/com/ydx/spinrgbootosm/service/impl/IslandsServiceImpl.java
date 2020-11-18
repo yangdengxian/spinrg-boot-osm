@@ -1,5 +1,6 @@
 package com.ydx.spinrgbootosm.service.impl;
 
+import com.ydx.spinrgbootosm.domain.Islands;
 import com.ydx.spinrgbootosm.repository.IslandsRepository;
 import com.ydx.spinrgbootosm.service.IslandsService;
 import com.ydx.spinrgbootosm.util.ThreadContext;
@@ -14,10 +15,9 @@ public class IslandsServiceImpl implements IslandsService {
     @Autowired
     IslandsRepository islandsRepository;
     @Override
-    public List<Map<String, Object>> findAllIslands() throws Exception {
-        List<Map<String, Object>> lists = new ArrayList<>();
+    public List<Islands> findAllIslands() throws Exception {
         ThreadContext.putContext("currentSchema", "china");
-        List<Object[]> islands = islandsRepository.findAllIslands();
-        return lists;
+        List<Islands> islands = islandsRepository.findAllIslands();
+        return islands;
     }
 }

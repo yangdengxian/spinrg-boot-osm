@@ -7,7 +7,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Map;
 
 @Repository
 public interface IslandsRepository extends JpaRepository<Islands,String>, JpaSpecificationExecutor<Islands> {
@@ -17,7 +16,7 @@ public interface IslandsRepository extends JpaRepository<Islands,String>, JpaSpe
      * @author ydx
      * @data 2020-11-12 22:29
      */
-    @Query(value = "select * from poi ",nativeQuery = true)
-    List<Object[]> findAllIslands();
+    @Query(value = "select \"id\",\"islandCNName\",\"islandENName\",\"elevation\",public.st_asgeojson(\"geom\") as geom from islands ",nativeQuery = true)
+    List<Islands> findAllIslands();
 
 }

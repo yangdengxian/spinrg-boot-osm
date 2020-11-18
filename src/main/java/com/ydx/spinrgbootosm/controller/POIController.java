@@ -24,7 +24,7 @@ public class POIController {
     @RequestMapping(value = "/findAllPOI", method = RequestMethod.GET)
     @ApiOperation(value = "查询poi", tags={"poi信息分组"}, notes = "200", code = 200, produces = "application/json")
     @ResponseBody
-    public Object findAllPOI() throws Exception{
+    public List<POI> findAllPOI() throws Exception{
         List<POI> islands = poiService.findAllPOI();
         return islands;
     }

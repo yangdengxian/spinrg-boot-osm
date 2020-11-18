@@ -14,35 +14,23 @@ import javax.persistence.*;
 @ApiModel("圈闭管理信息表")
 public class Islands {
 	@Id
-	@Column(name="islandNo")
+	@Column(name="id")
 	@ApiModelProperty("岛屿id")
-	private String islandNo;
+	private String id;
 
 	@Column(name="islandCNName")
 	@ApiModelProperty("岛屿中文名称")
 	private String islandCNName;
-	private static final long serialVersionUID = 1L;
 
-	public static long getSerialVersionUID() {
-		return serialVersionUID;
-	}
+	@Column(name="islandENName")
+	@ApiModelProperty("岛屿英文名称")
+	private String islandENName;
 
-	public String getIslandNo() {
-		return islandNo;
-	}
+	@Column(name="elevation")
+	@ApiModelProperty("岛屿高程")
+	private Double elevation;
 
-	public void setIslandNo(String islandNo) {
-		this.islandNo = islandNo;
-	}
-
-	public String getIslandCNName() {
-		return islandCNName;
-	}
-
-	public void setIslandCNName(String islandCNName) {
-		this.islandCNName = islandCNName;
-	}
-
-
-
+	@Column(name="geom")
+	@ApiModelProperty("空间信息")
+	private String geom;
 }
