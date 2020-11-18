@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    password: postgres
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=china,public
+    username: postgres
+  jpa:
+    properties:
+      javax:
+        persistence:
+          schema-generation:
+            database:
+              action: none
+    show-sql: true
