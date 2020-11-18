@@ -1,0 +1,1 @@
+# spinrg-boot-osm
