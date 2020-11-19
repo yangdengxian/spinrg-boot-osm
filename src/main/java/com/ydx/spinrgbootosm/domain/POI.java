@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Entity
-@ApiModel("圈闭管理信息表")
+@ApiModel("poi信息表")
 public class POI {
     @Id
     @Column(name="uid")

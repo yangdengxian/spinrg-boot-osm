@@ -1,17 +1,22 @@
 package com.ydx.spinrgbootosm.domain;
 
+import com.ydx.spinrgbootosm.util.PolygonConverter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
 import lombok.Setter;
+import org.eclipse.persistence.annotations.Convert;
+import org.eclipse.persistence.annotations.Converter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Table(name="islands")
 @Getter
 @Setter
 @Entity
-@ApiModel("圈闭管理信息表")
+@ApiModel("岛屿信息表")
+//@Converter(name="polygonConverter", converterClass = PolygonConverter.class)
 public class Islands {
 	@Id
 	@Column(name="id")
@@ -31,6 +36,7 @@ public class Islands {
 	private Double elevation;
 
 	@Column(name="geom")
-	@ApiModelProperty("空间信息")
+	@ApiModelProperty(value = "空间信息",hidden = true)
+//    @Convert("polygonConverter")
 	private String geom;
 }

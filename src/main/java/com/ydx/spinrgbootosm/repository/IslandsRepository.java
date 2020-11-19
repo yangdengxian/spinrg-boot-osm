@@ -16,7 +16,8 @@ public interface IslandsRepository extends JpaRepository<Islands,String>, JpaSpe
      * @author ydx
      * @data 2020-11-12 22:29
      */
-    @Query(value = "select \"id\",\"islandCNName\",\"islandENName\",\"elevation\",public.st_asgeojson(\"geom\") as geom from islands ",nativeQuery = true)
+//    @Query(value = "select \"id\",\"islandCNName\",\"islandENName\",\"elevation\",public.st_asgeojson(\"geom\") as geom from islands ",nativeQuery = true)
+    @Query(value = "select * from islands ",nativeQuery = true)
     List<Islands> findAllIslands();
 
 }
